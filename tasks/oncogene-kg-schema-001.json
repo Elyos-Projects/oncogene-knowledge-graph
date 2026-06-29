@@ -1,0 +1,35 @@
+{
+  "id": "oncogene-kg-schema-001",
+  "title": "Define KG schema on Biolink Model + GA4GH VRS for variants",
+  "project": "oncogene-knowledge-graph",
+  "type": "design-spec",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["cancer-research", "bioinformatics", "open-data", "knowledge-graph", "precision-oncology"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "An open gene-variant-drug-pathway cancer knowledge graph needs a shared schema before any data is ingested. Sources are open-access, openly-licensed knowledgebases only (CIViC CC0, Reactome CC0, Open Targets own CC0 data, ClinVar public domain) plus open ontologies for normalization. COSMIC, OncoKB, and DrugBank-NC are non-redistributable and OUT OF SCOPE; controlled-access (dbGaP/EGA/biobanks) and any identifiable patient data are forbidden. This is a research/education artifact, never medical advice. See PLAN.md (Data, licensing & compliance leads).",
+  "objective": "Define the KG schema using the Biolink Model for entity categories (Gene, variant/MolecularProfile, Drug/ChemicalEntity, Pathway, Disease) and predicates linking them, adopting GA4GH VRS as the canonical variant identity, with a per-edge provenance slot and explicit modeling of source-conflicting assertions (no single forced 'truth').",
+  "acceptanceCriteria": [
+    "Core Biolink categories and the predicates linking gene/variant/drug/pathway/disease defined with datatypes and cardinality.",
+    "GA4GH VRS adopted as canonical variant identity; HGVS and source-native IDs retained as aliases.",
+    "Every entity/edge reserves a provenance slot (source IRI + evidence level + license) per the provenance model.",
+    "Conflicting-assertion representation specified so contradicting sources are retained, not flattened.",
+    "Evidence levels are carried verbatim from sources; the schema does not permit re-grading.",
+    "Published as a human-readable spec plus a machine artifact (Biolink/SHACL stub)."
+  ],
+  "resources": [
+    "planning/projects/oncogene-knowledge-graph/PLAN.md",
+    "https://biolink.github.io/biolink-model/",
+    "https://vrs.ga4gh.org/",
+    "https://civicdb.org/",
+    "https://reactome.org/"
+  ],
+  "output": "A schema specification document (schema/README.md) plus a Biolink/SHACL stub defining the entity categories, predicates, variant (VRS) identity model, and provenance slots, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}
