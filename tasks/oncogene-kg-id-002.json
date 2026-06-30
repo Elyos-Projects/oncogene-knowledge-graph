@@ -1,0 +1,36 @@
+{
+  "id": "oncogene-kg-id-002",
+  "title": "Implement identifier-normalization service (genes/variants/drugs/diseases/pathways)",
+  "project": "oncogene-knowledge-graph",
+  "type": "code",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": ["cancer-research", "bioinformatics", "open-data", "knowledge-graph", "data-engineering"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "large",
+  "status": "open",
+  "context": "Multi-source integration requires a shared identifier-normalization service that resolves entity identifiers from different sources to canonical CURIEs. The policy is defined in oncogene-kg-id-001; this task implements it. Gene/variant/drug/disease/pathway identifiers from different sources must resolve to HGNC/VRS/ChEMBL/Mondo/Reactome canonical CURIEs via Bioregistry, with source-native IDs retained as aliases. Variant merges require human review. Builds on the CIViC data slice (oncogene-kg-data-civic-001).",
+  "objective": "Implement the identifier-normalization service that resolves each entity class to its canonical CURIE using Bioregistry, retains source-native aliases, precision-tunes variant merges with human review, and meets the >=99% entity resolution and >=95% VRS-keyed variant targets.",
+  "acceptanceCriteria": [
+    "Resolves gene entities to HGNC/Ensembl canonical CURIEs via Bioregistry; >=99% of a sampled set resolve to a live record.",
+    "Resolves variant entities to GA4GH VRS canonical identifiers; >=95% of variant nodes carry a canonical VRS identifier.",
+    "Resolves drug entities to ChEMBL/RxNorm, disease entities to Mondo/DOID, pathway entities to Reactome canonical CURIEs.",
+    "Source-native IDs are retained as aliases on every resolved entity, not discarded.",
+    "Variant merges require human review; no silent auto-merge is implemented.",
+    "Service integrates into the ETL pipeline and passes CI."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/oncogene-kg-id-001.json",
+    "tasks/oncogene-kg-data-civic-001.json",
+    "https://bioregistry.io/",
+    "https://vrs.ga4gh.org/",
+    "https://www.genenames.org/"
+  ],
+  "output": "etl/normalize/ directory containing the identifier-normalization service code, committed via PR with CI green.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

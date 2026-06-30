@@ -1,0 +1,34 @@
+{
+  "id": "oncogene-kg-partner-002",
+  "title": "Engage >=1 candidate steward for adoption/validation",
+  "project": "oncogene-knowledge-graph",
+  "type": "research",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": ["cancer-research", "bioinformatics", "open-data", "knowledge-graph", "community"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "The project's verifiedNeed is currently false because no committed steward or adopting partner has been secured. As the CIViC slice becomes available (M1), this is the moment to engage candidate stewards with a tangible artifact. The goal is to move at least one organization from 'candidate' to 'active conversation about adoption'.",
+  "objective": "Engage >=1 candidate steward (academic group, advocacy org, or community knowledgebase) in active conversation about adopting, hosting, or citing the knowledge graph, using the CIViC data slice as a demonstration artifact.",
+  "acceptanceCriteria": [
+    "At least 1 candidate steward is engaged in active conversation about adoption, hosting, or citing the graph.",
+    "Engagement is documented with organization name, contact, date, and nature of interest.",
+    "The CIViC data slice was shared or demonstrated as part of the engagement.",
+    "A clear next step (follow-up meeting, formal commitment, or documented decline) is recorded.",
+    "Engagement log updated in docs/partner-outreach-log.md."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/oncogene-kg-partner-001.json",
+    "tasks/oncogene-kg-data-civic-001.json",
+    "https://civicdb.org/",
+    "https://www.cancergenomeinterpreter.org/"
+  ],
+  "output": "Updated docs/partner-outreach-log.md with >=1 active steward engagement record including organization, contact, date, artifact shared, and next step, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}

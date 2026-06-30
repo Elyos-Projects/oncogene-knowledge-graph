@@ -1,0 +1,35 @@
+{
+  "id": "oncogene-kg-prov-001",
+  "title": "Provenance model + define the countable 'assertion' unit",
+  "project": "oncogene-knowledge-graph",
+  "type": "design-spec",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["cancer-research", "bioinformatics", "open-data", "knowledge-graph", "data-provenance"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "The project's definition of done requires 100% per-assertion provenance enforced by CI. To make this mechanically checkable, the provenance model must define exactly what an 'assertion' is (one Biolink association instance), what fields it must carry, and how the CI gate will count and validate them. This builds on the schema defined in oncogene-kg-schema-001.",
+  "objective": "Define a SEPIO-/nanopublication-style per-edge provenance record with named mandatory fields, and formally define the countable 'assertion' unit so that the 100% provenance CI gate is mechanically implementable.",
+  "acceptanceCriteria": [
+    "The countable assertion unit is formally defined as one Biolink association instance.",
+    "Provenance record fields are specified: source IRI, record ID, license, source version, PMID/DOI (where applicable), evidence level (verbatim from source), extraction method, and pipeline commit hash.",
+    "The model is SEPIO-/nanopublication-aligned and compatible with the Biolink schema stub from oncogene-kg-schema-001.",
+    "CI gate logic is described: a pass requires every association to carry all mandatory provenance fields with resolvable values.",
+    "Conflicting-assertion provenance representation is covered (each source's assertion retains its own provenance record independently).",
+    "Published as a human-readable spec document and referenced from the schema README."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/oncogene-kg-schema-001.json",
+    "https://biolink.github.io/biolink-model/",
+    "https://sepio.readthedocs.io/",
+    "https://nanopub.org/"
+  ],
+  "output": "docs/provenance-model.md specifying the per-edge provenance fields and the formal definition of the countable assertion unit, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "oncogene-kg-data-clinvar-001",
+  "title": "ClinVar (US public-domain) variant enrichment under VRS",
+  "project": "oncogene-knowledge-graph",
+  "type": "data",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": ["cancer-research", "bioinformatics", "open-data", "knowledge-graph", "precision-oncology"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "dataset",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "ClinVar is a US public-domain resource providing variant-condition assertions with clinical review status. Integrating ClinVar data enriches the variant nodes already in the graph (from CIViC) with additional condition associations and clinical significance. Variant nodes from ClinVar must reconcile to existing VRS variant nodes where they match. Evidence and review status must be carried verbatim. Depends on the identifier-normalization service (oncogene-kg-id-002).",
+  "objective": "Integrate ClinVar variant-condition assertions into the knowledge graph: reconcile ClinVar variant records to existing VRS variant nodes, carry clinical significance and review status verbatim, attach complete provenance (US public domain), and pass all CI gates.",
+  "acceptanceCriteria": [
+    "ClinVar variant-condition assertions are integrated and reconcile to existing VRS variant nodes where they match.",
+    "100% of ClinVar assertions carry provenance: source=ClinVar, license=US public domain, version, record ID, review status (verbatim).",
+    "Clinical significance and review status (e.g., Pathogenic, Likely Pathogenic, Benign) are carried verbatim, not re-interpreted.",
+    "Variant reconciliation to VRS uses the normalization service; unmatched variants are flagged, not silently dropped.",
+    "Dataset passes CI (Biolink/SHACL + provenance-completeness + allow-list linter).",
+    "ClinVar is in the allowlist with status approved before ingestion."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/oncogene-kg-id-002.json",
+    "tasks/oncogene-kg-prov-001.json",
+    "tasks/oncogene-kg-ci-001.json",
+    "https://www.ncbi.nlm.nih.gov/clinvar/",
+    "https://vrs.ga4gh.org/"
+  ],
+  "output": "data/clinvar/ directory containing the ClinVar-enriched graph slice in KGX format with checksums and provenance, committed via PR with CI green.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}

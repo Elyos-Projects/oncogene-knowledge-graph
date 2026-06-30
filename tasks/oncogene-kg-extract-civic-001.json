@@ -1,0 +1,37 @@
+{
+  "id": "oncogene-kg-extract-civic-001",
+  "title": "CIViC ETL -> Biolink edges with full provenance + evidence verbatim",
+  "project": "oncogene-knowledge-graph",
+  "type": "code",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["cancer-research", "bioinformatics", "open-data", "knowledge-graph", "data-engineering"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "CIViC (CC0) is the first approved source for the knowledge graph. An ETL pipeline must transform a pinned, checksummed CIViC release into Biolink associations with complete provenance. Evidence levels (A-E) and AMP/ASCO/CAP tiers must be carried verbatim, never re-graded. Variants must be mapped to GA4GH VRS identifiers. This is the end-to-end proof of the extraction architecture. Depends on CI (oncogene-kg-ci-001) and license analysis (oncogene-kg-license-002).",
+  "objective": "Implement a CIViC-to-Biolink ETL pipeline that ingests a pinned, checksummed CIViC release, maps variants to GA4GH VRS, carries evidence levels and AMP/ASCO/CAP tiers verbatim, attaches complete provenance to every edge, and passes all CI gates.",
+  "acceptanceCriteria": [
+    "Transforms a pinned, checksummed CIViC release to Biolink associations; the pinned version and checksum are hardcoded or stored in the pipeline config.",
+    "CIViC evidence levels (A-E) and AMP/ASCO/CAP tiers are carried verbatim and the pipeline cannot re-grade them.",
+    "Variants are mapped to GA4GH VRS identifiers; source-native CIViC variant IDs are retained as aliases.",
+    "Every edge carries a complete provenance record: source=CIViC, record ID, license=CC0, version, PMID, method, pipeline commit hash.",
+    "Ambiguous or unmappable variants are flagged, never silently dropped or invented.",
+    "Output passes Biolink/SHACL validation and all CI gates (provenance-completeness + allow-list linter)."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/oncogene-kg-schema-001.json",
+    "tasks/oncogene-kg-prov-001.json",
+    "tasks/oncogene-kg-ci-001.json",
+    "tasks/oncogene-kg-license-002.json",
+    "https://civicdb.org/",
+    "https://vrs.ga4gh.org/"
+  ],
+  "output": "etl/civic/ directory containing the CIViC ETL pipeline code and config (pinned version/checksum), committed via PR, with CI green.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

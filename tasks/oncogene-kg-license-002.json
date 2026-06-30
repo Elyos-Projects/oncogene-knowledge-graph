@@ -1,0 +1,36 @@
+{
+  "id": "oncogene-kg-license-002",
+  "title": "Analyze & record first sources (CIViC/Reactome/Open Targets; flag COSMIC/OncoKB/DrugBank)",
+  "project": "oncogene-knowledge-graph",
+  "type": "research",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["cancer-research", "bioinformatics", "open-data", "knowledge-graph", "licensing"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "With the allow-list schema defined (oncogene-kg-license-001), the first concrete sources must be analyzed and their license determinations recorded. CIViC is expected to be approved (CC0). Reactome and Open Targets each require careful analysis: Open Targets distinguishes between its own CC0 computed data and the integrated third-party sources it aggregates. COSMIC, OncoKB, and DrugBank-NC must be formally recorded as rejected with specific reasons.",
+  "objective": "Analyze ≥3 candidate sources (CIViC, Reactome, Open Targets) and record each as an entry in sources/allowlist.yml with a license/redistribution determination. Formally record COSMIC, OncoKB, and DrugBank-NC as rejected with specific reasoning. Note the Open Targets distinction between OT-own CC0 data and integrated upstream source data.",
+  "acceptanceCriteria": [
+    "At least 3 sources analyzed with a recorded license/redistribution determination in sources/allowlist.yml.",
+    "CIViC is marked approved (CC0-1.0) with evidence (license URL, retrieved date, version).",
+    "Reactome is analyzed with redistribution and attribution obligations recorded.",
+    "Open Targets is analyzed with the OT-own-CC0 vs integrated-source-license distinction explicitly noted.",
+    "COSMIC, OncoKB, and DrugBank-NC are recorded as rejected with the specific reason (non-commercial/proprietary/NC clause).",
+    "Each entry includes the source version and URL at time of analysis."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/oncogene-kg-license-001.json",
+    "https://civicdb.org/",
+    "https://reactome.org/",
+    "https://platform.opentargets.org/",
+    "https://www.ncbi.nlm.nih.gov/clinvar/"
+  ],
+  "output": "Populated sources/allowlist.yml with entries for CIViC (approved), Reactome, Open Targets, COSMIC (rejected), OncoKB (rejected), and DrugBank-NC (rejected), plus a brief analysis memo in docs/source-license-analysis.md.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}

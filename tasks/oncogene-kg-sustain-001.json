@@ -1,0 +1,32 @@
+{
+  "id": "oncogene-kg-sustain-001",
+  "title": "Sustainability: refresh cadence + reviewer rotation + hosting plan",
+  "project": "oncogene-knowledge-graph",
+  "type": "writing",
+  "lane": "donated",
+  "priority": "low",
+  "domain": ["cancer-research", "bioinformatics", "open-data", "knowledge-graph"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "Once the graph is shipped, it must remain current and trustworthy over time. Sources update on varying schedules; reviewer burn-out is a real risk; hosting costs must be planned. The sustainability plan documents the intended refresh cadence for each source, the reviewer rotation mechanism, and the hosting plan (which steward hosts what, at what cost).",
+  "objective": "Document the sustainability plan covering: (1) source refresh cadence (how often each source's data is updated and the license re-verified), (2) reviewer rotation mechanism (how reviewers are replaced if they rotate out), and (3) hosting plan (which steward hosts the explorer and exports, estimated costs, and fallback if steward withdraws).",
+  "acceptanceCriteria": [
+    "Refresh cadence documented for each integrated source, including license re-verification at each refresh.",
+    "Reviewer rotation mechanism documented: how new License/Compliance and Scientific reviewers are recruited, onboarded, and credited.",
+    "Hosting plan documented: which steward hosts what, estimated costs, and contingency if steward withdraws.",
+    "Document references the refresh pipeline implemented in oncogene-kg-data-scale-001.",
+    "Published as docs/sustainability-plan.md."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/oncogene-kg-partner-003.json",
+    "tasks/oncogene-kg-data-scale-001.json"
+  ],
+  "output": "docs/sustainability-plan.md covering refresh cadence, reviewer rotation, and hosting plan, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}

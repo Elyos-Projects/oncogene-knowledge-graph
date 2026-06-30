@@ -1,0 +1,34 @@
+{
+  "id": "oncogene-kg-explorer-001",
+  "title": "Read-only public explorer (source + evidence on every edge; 'not medical advice' banner)",
+  "project": "oncogene-knowledge-graph",
+  "type": "code",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": ["cancer-research", "bioinformatics", "open-data", "knowledge-graph", "precision-oncology"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "A read-only public explorer allows researchers and educators to browse the knowledge graph without needing to load graph files. Every edge must show its source, evidence level, and 'as-of' source version so users can trace assertions back to the primary literature. The explorer must carry a standing 'For research and education only - not medical advice' banner on every view and collect no visitor PII. Depends on exports (oncogene-kg-export-001).",
+  "objective": "Build and deploy a read-only public explorer backed by the graph exports that shows gene/variant/drug/pathway/disease associations with per-edge source, evidence level, and as-of source version, with a mandatory research-use disclaimer banner, no account required, and no visitor PII collected.",
+  "acceptanceCriteria": [
+    "Users can browse a gene or variant and see linked drugs, pathways, and diseases with every assertion's source, evidence level, and as-of source version.",
+    "Standing 'For research and education only - not medical advice' banner appears on every view with no way to dismiss it permanently.",
+    "Explorer is static or server-rendered with no user accounts and collects no visitor PII.",
+    "Links to raw export files are prominent on every page.",
+    "Explorer is accessible without authentication.",
+    "Passes the scope-firewall policy requirements from oncogene-kg-firewall-001."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/oncogene-kg-export-001.json",
+    "tasks/oncogene-kg-firewall-001.json",
+    "https://biolink.github.io/biolink-model/"
+  ],
+  "output": "explorer/ directory with the read-only explorer application code and deployment config, committed via PR with CI green and a live deployment URL.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

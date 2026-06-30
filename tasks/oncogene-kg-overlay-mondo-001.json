@@ -1,0 +1,34 @@
+{
+  "id": "oncogene-kg-overlay-mondo-001",
+  "title": "Mondo disease-ontology CC-BY overlay (xrefs + labels)",
+  "project": "oncogene-knowledge-graph",
+  "type": "data",
+  "lane": "donated",
+  "priority": "low",
+  "domain": ["cancer-research", "bioinformatics", "open-data", "knowledge-graph", "ontology"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "dataset",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "The CC0 core graph uses Mondo CURIEs for disease normalization but does not include the full Mondo ontology label/xref enrichment, which is CC-BY-4.0 licensed. A segregated CC-BY overlay can provide richer disease labels, synonyms, and cross-references (to OMIM, DOID, etc.) without contaminating the CC0 core. This is an unscheduled backlog item for after M4.",
+  "objective": "Produce a CC-BY-4.0 Mondo disease-ontology overlay providing disease labels, synonyms, and cross-references for disease nodes in the CC0 core, packaged as a separate overlay dataset with its own license manifest.",
+  "acceptanceCriteria": [
+    "Mondo disease labels, synonyms, and xrefs are extracted for disease entities present in the CC0 core graph.",
+    "Overlay is packaged separately from the CC0 core and carries a CC-BY-4.0 license manifest.",
+    "Every overlay entry carries provenance: source=Mondo, version, license=CC-BY-4.0.",
+    "Overlay passes Biolink/SHACL structural validation.",
+    "Mondo's allowlist entry is approved before ingestion.",
+    "A data README explains the overlay scope and how to combine it with the CC0 core."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/oncogene-kg-id-002.json",
+    "https://mondo.monarchinitiative.org/",
+    "https://creativecommons.org/licenses/by/4.0/"
+  ],
+  "output": "data/overlays/mondo/ directory with the CC-BY-4.0 Mondo disease label/xref overlay dataset and license manifest, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}

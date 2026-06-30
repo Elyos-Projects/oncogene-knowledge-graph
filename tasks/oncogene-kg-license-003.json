@@ -1,0 +1,35 @@
+{
+  "id": "oncogene-kg-license-003",
+  "title": "Conclude & document COSMIC/OncoKB/DrugBank engagement outcome",
+  "project": "oncogene-knowledge-graph",
+  "type": "research",
+  "lane": "donated",
+  "priority": "low",
+  "domain": ["cancer-research", "bioinformatics", "open-data", "knowledge-graph", "licensing"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "COSMIC, OncoKB, and DrugBank-NC are recorded as rejected sources due to non-commercial/proprietary licensing. The M4 definition of done requires the engagement outcome with these sources to be documented, including any negotiation attempts, formal responses, or a clear 'declined / not pursued' record. This creates a transparent audit trail for the project's scoping decisions.",
+  "objective": "Conduct or formalize outreach to COSMIC, OncoKB, and DrugBank custodians (where appropriate) to determine whether open-redistribution terms are available, and document the outcome of each engagement or the rationale for not pursuing it.",
+  "acceptanceCriteria": [
+    "An engagement outcome is documented for COSMIC: outreach attempted or rationale for not pursuing, and any response received.",
+    "An engagement outcome is documented for OncoKB: outreach attempted or rationale for not pursuing, and any response received.",
+    "An engagement outcome is documented for DrugBank-NC: outreach attempted or rationale for not pursuing, and any response received.",
+    "Each entry records: source name, custodian, date, contact method, response, and final status (declined / not pursued / terms changed).",
+    "If any source's terms changed to permit redistribution, the allowlist entry is updated accordingly.",
+    "Document committed as docs/restricted-source-engagement.md."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/oncogene-kg-license-002.json",
+    "https://cancer.sanger.ac.uk/cosmic",
+    "https://www.oncokb.org/",
+    "https://www.drugbank.com/"
+  ],
+  "output": "docs/restricted-source-engagement.md documenting the outcome of engagement with COSMIC, OncoKB, and DrugBank custodians (or rationale for not pursuing), committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}

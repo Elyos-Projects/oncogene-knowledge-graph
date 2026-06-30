@@ -1,0 +1,35 @@
+{
+  "id": "oncogene-kg-sparql-001",
+  "title": "Optional hosted SPARQL / Neo4j query endpoint",
+  "project": "oncogene-knowledge-graph",
+  "type": "code",
+  "lane": "donated",
+  "priority": "low",
+  "domain": ["cancer-research", "bioinformatics", "open-data", "knowledge-graph", "data-engineering"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "large",
+  "status": "open",
+  "context": "A public SPARQL or Neo4j query endpoint would allow programmatic queries against the knowledge graph without requiring users to download the full export. This is only viable if a steward offers to host the infrastructure. It is listed as an optional backlog item; this task should not be started until a steward has committed to host and fund the endpoint.",
+  "objective": "Implement and deploy a public read-only SPARQL and/or Neo4j Bolt query endpoint backed by the graph exports, with no PII collection, rate limiting, and the research-use disclaimer on the endpoint documentation.",
+  "acceptanceCriteria": [
+    "A named steward has committed to host and fund the endpoint before this task begins.",
+    "A public read-only SPARQL or Neo4j Bolt endpoint is deployed and accessible without authentication.",
+    "The endpoint serves only the CC0 core graph (or clearly labeled which overlays are included).",
+    "Rate limiting is configured to prevent abuse.",
+    "Endpoint documentation carries the 'For research and education only - not medical advice' disclaimer.",
+    "No visitor PII is collected by the endpoint."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/oncogene-kg-export-001.json",
+    "tasks/oncogene-kg-partner-003.json",
+    "https://www.w3.org/TR/sparql11-overview/",
+    "https://neo4j.com/docs/"
+  ],
+  "output": "deploy/sparql/ or deploy/neo4j/ directory with endpoint configuration and deployment scripts, committed via PR, with a live endpoint URL.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

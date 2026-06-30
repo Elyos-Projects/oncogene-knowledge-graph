@@ -1,0 +1,34 @@
+{
+  "id": "oncogene-kg-vicc-001",
+  "title": "Reconcile against VICC meta-knowledgebase representation",
+  "project": "oncogene-knowledge-graph",
+  "type": "data",
+  "lane": "donated",
+  "priority": "low",
+  "domain": ["cancer-research", "bioinformatics", "open-data", "knowledge-graph", "precision-oncology"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "dataset",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "The Variant Interpretation for Cancer Consortium (VICC) has developed a meta-knowledgebase representation for cancer variant interpretation that overlaps with the oncogene KG's scope. Reconciling this project's graph against VICC's representation improves interoperability, surfaces any evidence model differences, and may reveal opportunities for shared identifier normalization. This is an unscheduled backlog item.",
+  "objective": "Map the oncogene KG's entity and edge representation against the VICC meta-knowledgebase format, produce a reconciliation report identifying alignments and divergences, and where possible produce a VICC-compatible dataset slice.",
+  "acceptanceCriteria": [
+    "The oncogene KG's entity categories and predicates are mapped against the VICC meta-knowledgebase schema.",
+    "A reconciliation report identifies: aligned concepts (same semantics, different syntax), divergent concepts (different semantics), and unmapped concepts in each direction.",
+    "Evidence model differences (e.g., evidence level vocabularies) are explicitly documented.",
+    "Where possible, a VICC-compatible dataset slice is produced from the existing graph data.",
+    "The reconciliation report is published as docs/vicc-reconciliation.md."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/oncogene-kg-schema-001.json",
+    "tasks/oncogene-kg-data-civic-001.json",
+    "https://vicc.org/",
+    "https://github.com/cancervariants/metakb"
+  ],
+  "output": "docs/vicc-reconciliation.md and (if feasible) data/vicc-compat/ directory with a VICC-compatible dataset slice, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "oncogene-kg-validate-001",
+  "title": "Full Biolink/SHACL validation + cross-source contradiction report",
+  "project": "oncogene-knowledge-graph",
+  "type": "code",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": ["cancer-research", "bioinformatics", "open-data", "knowledge-graph", "quality-assurance"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "With Reactome, Open Targets, and ClinVar integrated (M2 complete), the full multi-source graph must be validated as a whole. Beyond structural Biolink/SHACL validation, a cross-source contradiction report is needed: cases where different sources make conflicting assertions about the same entity or relationship must be surfaced, retained, and reported to reviewers rather than silently resolved.",
+  "objective": "Implement full Biolink/SHACL validation of the complete multi-source graph, generate a cross-source contradiction report listing conflicting assertions with their sources, and ensure all identifier-resolution and provenance-completeness gates pass.",
+  "acceptanceCriteria": [
+    "The whole graph passes Biolink/SHACL structural validation.",
+    "Identifier-resolution gate (>=99% entities resolved) passes.",
+    "Provenance-completeness gate (100% assertions) passes.",
+    "A cross-source contradiction report is generated listing conflicting assertions with source provenance on each side; contradictions are retained, not silently resolved.",
+    "The contradiction report is human-readable and links to the specific assertions.",
+    "Validation and report generation are integrated into the CI pipeline and run on graph data PRs."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/oncogene-kg-extract-reactome-001.json",
+    "tasks/oncogene-kg-extract-ot-001.json",
+    "tasks/oncogene-kg-data-clinvar-001.json",
+    "https://www.w3.org/TR/shacl/",
+    "https://biolink.github.io/biolink-model/"
+  ],
+  "output": "validate/ directory with full validation scripts and a generated cross-source contradiction report (output/contradiction-report.md), committed via PR with CI green.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

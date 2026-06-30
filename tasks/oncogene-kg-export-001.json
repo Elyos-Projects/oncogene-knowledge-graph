@@ -1,0 +1,35 @@
+{
+  "id": "oncogene-kg-export-001",
+  "title": "KGX + RDF/Turtle + JSON-LD + Neo4j exports w/ per-export license manifests",
+  "project": "oncogene-knowledge-graph",
+  "type": "code",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": ["cancer-research", "bioinformatics", "open-data", "knowledge-graph", "data-engineering"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "Downstream consumers need the knowledge graph in multiple standard formats. Each export must ship with a license manifest naming every source, version, and required citation. CC0 core and CC-BY/CC-BY-SA overlays must be separately packaged to avoid license contamination. Exports must round-trip (re-import and validate against the schema). Depends on full validation (oncogene-kg-validate-001).",
+  "objective": "Implement export pipelines producing KGX (TSV+JSON), RDF/Turtle, JSON-LD, and Neo4j dump formats with stable IRIs/CURIEs, per-export license manifests naming every source and required attribution, and separately packaged CC0 core vs CC-BY/CC-BY-SA overlays. Verify round-trip re-import.",
+  "acceptanceCriteria": [
+    "Produces valid KGX (TSV+JSON), RDF/Turtle, JSON-LD, and Neo4j dump with stable IRIs/CURIEs.",
+    "Each export ships a license manifest (LICENSES.md/ATTRIBUTION.md) naming every source, version, and required citation.",
+    "CC0 core and CC-BY/CC-BY-SA overlays are packaged separately in each export format.",
+    "Exports round-trip: re-import of KGX and JSON-LD validates against the Biolink/SHACL schema.",
+    "Export pipeline is re-runnable and produces stable output for a given graph state.",
+    "A brief export README documents the formats, file layout, and how to load each format."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/oncogene-kg-validate-001.json",
+    "https://kgx.readthedocs.io/",
+    "https://www.w3.org/TR/turtle/",
+    "https://neo4j.com/docs/"
+  ],
+  "output": "export/ directory with export pipeline code and generated output/ files in all four formats with license manifests, committed via PR with CI green.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

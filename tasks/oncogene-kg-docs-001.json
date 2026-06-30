@@ -1,0 +1,36 @@
+{
+  "id": "oncogene-kg-docs-001",
+  "title": "Data dictionary + citation/usage guide for consumers",
+  "project": "oncogene-knowledge-graph",
+  "type": "writing",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": ["cancer-research", "bioinformatics", "open-data", "knowledge-graph"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "Downstream consumers (researchers, tool builders, advocates) need documentation explaining what fields the graph contains, what the evidence levels mean, how to cite the data sources correctly, and how to use the exports. This documentation completes the M3 milestone and enables real downstream adoption. Depends on the explorer (oncogene-kg-explorer-001) so it can reference the live tool.",
+  "objective": "Write a data dictionary explaining every entity class, predicate, and field in the graph schema, and a citation/usage guide covering correct attribution for each source, how to load the exports, and the research-use-only scope restriction.",
+  "acceptanceCriteria": [
+    "Data dictionary covers all Biolink entity categories and predicates used in the graph with field names, types, and semantics.",
+    "Evidence level codes (CIViC A-E, AMP/ASCO/CAP tiers) are explained with their original meanings; no re-interpretation.",
+    "Citation/usage guide provides correct attribution text for each source (CIViC, Reactome, Open Targets, ClinVar) and any CC-BY/CC-BY-SA overlay.",
+    "Usage guide explains how to load KGX, RDF/Turtle, JSON-LD, and Neo4j exports.",
+    "Research-use-only scope restriction is prominently stated in the guide.",
+    "Published as docs/data-dictionary.md and docs/usage-guide.md."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/oncogene-kg-schema-001.json",
+    "tasks/oncogene-kg-prov-001.json",
+    "tasks/oncogene-kg-explorer-001.json",
+    "https://biolink.github.io/biolink-model/",
+    "https://civicdb.org/"
+  ],
+  "output": "docs/data-dictionary.md and docs/usage-guide.md covering all schema fields, evidence level semantics, source citations, export loading instructions, and research-use-only scope, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}

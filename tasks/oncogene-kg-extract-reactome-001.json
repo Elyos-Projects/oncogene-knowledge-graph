@@ -1,0 +1,36 @@
+{
+  "id": "oncogene-kg-extract-reactome-001",
+  "title": "Reactome (CC0) pathway + gene/protein-participation ETL",
+  "project": "oncogene-knowledge-graph",
+  "type": "code",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": ["cancer-research", "bioinformatics", "open-data", "knowledge-graph", "data-engineering"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "Reactome is a CC0-licensed open pathway database providing gene/protein-participation-in-pathway associations. Once the identifier-normalization service (oncogene-kg-id-002) and license analysis (oncogene-kg-license-002) are in place, Reactome pathway data can be integrated to extend the knowledge graph with pathway context for genes and variants. This is a lower-risk extraction because Reactome's CC0 license is unambiguous.",
+  "objective": "Implement a Reactome-to-Biolink ETL pipeline that ingests a pinned Reactome release, extracts gene/protein-participation-in-pathway associations, normalizes identifiers via the normalization service, attaches complete provenance, and passes all CI gates.",
+  "acceptanceCriteria": [
+    "Transforms a pinned, checksummed Reactome release to Biolink pathway participation associations.",
+    "Gene/protein entities are normalized to HGNC/Ensembl and pathway entities to Reactome CURIEs via the normalization service.",
+    "Every edge carries complete provenance: source=Reactome, record ID, license=CC0, version, method, pipeline commit.",
+    "Output passes Biolink/SHACL validation and all CI gates.",
+    "Reactome's allowlist entry is marked approved before ingestion begins.",
+    "ETL is re-runnable and produces a stable output for a given pinned input version."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/oncogene-kg-id-002.json",
+    "tasks/oncogene-kg-license-002.json",
+    "tasks/oncogene-kg-ci-001.json",
+    "https://reactome.org/",
+    "https://biolink.github.io/biolink-model/"
+  ],
+  "output": "etl/reactome/ directory containing the Reactome ETL pipeline code, committed via PR with CI green.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

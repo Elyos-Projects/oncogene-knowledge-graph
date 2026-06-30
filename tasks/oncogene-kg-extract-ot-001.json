@@ -1,0 +1,36 @@
+{
+  "id": "oncogene-kg-extract-ot-001",
+  "title": "Open Targets ETL (OT-own CC0 data; per-integrated-source license segregation)",
+  "project": "oncogene-knowledge-graph",
+  "type": "code",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": ["cancer-research", "bioinformatics", "open-data", "knowledge-graph", "data-engineering"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "large",
+  "status": "open",
+  "context": "Open Targets provides two categories of data: its own CC0-computed evidence/associations and aggregated third-party source data with varied licenses. Only OT-own CC0 data may be ingested into the CC0 core graph. Any integrated third-party source-level data must first pass the license gate independently. CC-BY or CC-BY-SA derived fields must land in segregated overlays. This task has higher complexity and risk due to the license segregation requirement.",
+  "objective": "Implement an Open Targets ETL pipeline that ingests only OT-own CC0-computed evidence/associations, segregates any CC-BY/CC-BY-SA-derived fields into separate overlays with their own license manifests, normalizes identifiers, attaches complete provenance, and passes all CI gates without contaminating the CC0 core.",
+  "acceptanceCriteria": [
+    "Ingests only Open Targets' own CC0-computed evidence/associations; no integrated third-party source-level record is ingested without that upstream source passing the license gate.",
+    "CC-BY and CC-BY-SA-derived fields land in segregated overlay files with their own license manifest, never mixed into the CC0 core.",
+    "Every edge carries complete provenance: source=Open Targets, data type, license, version, method, pipeline commit.",
+    "Output passes Biolink/SHACL validation and all CI gates.",
+    "Open Targets' allowlist entry (OT-own CC0 scope) is marked approved before ingestion begins.",
+    "ETL code documents the OT-own vs integrated-source boundary clearly in comments and README."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/oncogene-kg-id-002.json",
+    "tasks/oncogene-kg-license-002.json",
+    "tasks/oncogene-kg-ci-001.json",
+    "https://platform.opentargets.org/",
+    "https://platform-docs.opentargets.org/"
+  ],
+  "output": "etl/opentargets/ directory containing the Open Targets ETL pipeline code with overlay segregation, committed via PR with CI green.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

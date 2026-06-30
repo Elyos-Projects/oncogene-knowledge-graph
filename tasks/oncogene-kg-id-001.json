@@ -1,0 +1,37 @@
+{
+  "id": "oncogene-kg-id-001",
+  "title": "Identifier/CURIE normalization policy (Bioregistry: HGNC/Ensembl/VRS/Mondo/ChEMBL)",
+  "project": "oncogene-knowledge-graph",
+  "type": "design-spec",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["cancer-research", "bioinformatics", "open-data", "knowledge-graph", "data-standards"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "Multiple sources use different identifiers for the same genes, variants, drugs, diseases, and pathways. A shared CURIE normalization policy is needed before multi-source integration so that all entities resolve to canonical identifiers and cross-source merges are auditable. Bioregistry is the chosen resolver. GA4GH VRS is the canonical variant identity standard.",
+  "objective": "Define the canonical CURIE/identifier policy for each entity class: genes (HGNC/Ensembl), variants (GA4GH VRS + HGVS aliases), drugs (ChEMBL/RxNorm), diseases (Mondo/DOID), and pathways (Reactome). Document the Bioregistry-based resolution approach, alias retention rules, and precision requirements for variant merging.",
+  "acceptanceCriteria": [
+    "Canonical CURIE namespace defined for each entity class: genes (HGNC), variants (GA4GH VRS), drugs (ChEMBL), diseases (Mondo), pathways (Reactome).",
+    "Source-native IDs are designated as aliases, not replaced, ensuring auditability.",
+    "Policy specifies that variant merges require human review; no silent auto-merge is permitted.",
+    "Bioregistry is designated as the resolver; lookup approach documented.",
+    "Resolution success target of ≥99% of entities (sampled) resolving to a live record is documented.",
+    "VRS key target of ≥95% of variant nodes carrying a canonical GA4GH VRS identifier is documented."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/oncogene-kg-schema-001.json",
+    "https://bioregistry.io/",
+    "https://vrs.ga4gh.org/",
+    "https://www.genenames.org/",
+    "https://www.ebi.ac.uk/chembl/",
+    "https://mondo.monarchinitiative.org/"
+  ],
+  "output": "docs/identifier-policy.md defining canonical CURIEs, alias retention rules, Bioregistry resolution approach, and precision targets, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}

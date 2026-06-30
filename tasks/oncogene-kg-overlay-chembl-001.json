@@ -1,0 +1,34 @@
+{
+  "id": "oncogene-kg-overlay-chembl-001",
+  "title": "ChEMBL drug-normalization CC-BY-SA overlay",
+  "project": "oncogene-knowledge-graph",
+  "type": "data",
+  "lane": "donated",
+  "priority": "low",
+  "domain": ["cancer-research", "bioinformatics", "open-data", "knowledge-graph", "pharmacology"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "dataset",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "ChEMBL is the canonical drug identifier source used for normalization in this project, but ChEMBL data is CC-BY-SA-3.0 (share-alike), which means any derivative must also be CC-BY-SA-3.0 and must be isolated from the CC0 core. A segregated ChEMBL overlay provides richer drug labels, synonyms, and chemical identifiers without contaminating the CC0 core or CC-BY overlays. Share-alike isolation is mandatory.",
+  "objective": "Produce a CC-BY-SA-3.0 ChEMBL drug-normalization overlay providing drug names, synonyms, and chemical identifiers for drug entities in the CC0 core, packaged as a fully isolated share-alike overlay with its own license manifest.",
+  "acceptanceCriteria": [
+    "ChEMBL drug names, synonyms, and chemical identifiers are extracted for drug entities present in the CC0 core.",
+    "Overlay is packaged in complete isolation from the CC0 core and CC-BY overlays, with a CC-BY-SA-3.0 license manifest.",
+    "Every overlay entry carries provenance: source=ChEMBL, version, license=CC-BY-SA-3.0.",
+    "Overlay passes Biolink/SHACL structural validation.",
+    "ChEMBL's allowlist entry is approved for this overlay before ingestion.",
+    "A data README explicitly warns about the CC-BY-SA-3.0 share-alike obligation on derivatives."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/oncogene-kg-id-002.json",
+    "https://www.ebi.ac.uk/chembl/",
+    "https://creativecommons.org/licenses/by-sa/3.0/"
+  ],
+  "output": "data/overlays/chembl/ directory with the CC-BY-SA-3.0 ChEMBL drug overlay dataset and license manifest, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-SA-3.0"
+}
