@@ -1,0 +1,36 @@
+{
+  "id": "oncogene-kg-ci-001",
+  "title": "CI scaffold: Biolink/SHACL + provenance-completeness + allow-list linter",
+  "project": "oncogene-knowledge-graph",
+  "type": "code",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["cancer-research", "bioinformatics", "open-data", "knowledge-graph", "data-engineering"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "The project's 100% provenance guarantee and license compliance must be enforced mechanically by CI, not by human review alone. This CI scaffold implements three gates: (1) Biolink/SHACL structural validation of graph data, (2) provenance-completeness check (every assertion must carry all mandatory provenance fields), and (3) allow-list linter (any assertion referencing a source not marked 'approved' in sources/allowlist.yml fails). Depends on the schema (oncogene-kg-schema-001) and provenance model (oncogene-kg-prov-001).",
+  "objective": "Implement a CI pipeline (GitHub Actions) that runs Biolink/SHACL validation, rejects any assertion lacking complete resolvable provenance, and rejects any assertion referencing a source not approved in the allow-list.",
+  "acceptanceCriteria": [
+    "CI fails on any assertion in the graph data lacking resolvable provenance (all mandatory fields per oncogene-kg-prov-001).",
+    "CI runs Biolink/SHACL validation and fails on structural violations.",
+    "CI rejects data referencing a source not marked 'approved' in sources/allowlist.yml.",
+    "All three gates run on every PR touching graph data files.",
+    "CI passes on the initial empty/stub graph state.",
+    "A brief CI README documents how to run the checks locally."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/oncogene-kg-schema-001.json",
+    "tasks/oncogene-kg-prov-001.json",
+    "tasks/oncogene-kg-license-001.json",
+    "https://biolink.github.io/biolink-model/",
+    "https://www.w3.org/TR/shacl/"
+  ],
+  "output": ".github/workflows/ci.yml implementing Biolink/SHACL validation, provenance-completeness, and allow-list linting gates, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

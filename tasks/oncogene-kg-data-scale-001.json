@@ -1,0 +1,34 @@
+{
+  "id": "oncogene-kg-data-scale-001",
+  "title": "Scale to >=4 approved sources + >=25,000 provenanced edges; refresh pipeline",
+  "project": "oncogene-knowledge-graph",
+  "type": "data",
+  "lane": "donated",
+  "priority": "low",
+  "domain": ["cancer-research", "bioinformatics", "open-data", "knowledge-graph", "data-engineering"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "dataset",
+  "tokenEstimate": "large",
+  "status": "open",
+  "context": "The M4 'shipped' milestone requires >=4 approved source collections and >=25,000 provenanced edges, along with a re-runnable refresh pipeline that re-applies the license gate and re-stamps source versions. A fresh stratified accuracy audit must still achieve >=98% at this scale. The refresh pipeline enables the project to stay current as source data evolves.",
+  "objective": "Integrate >=4 license-gated source collections, publish >=25,000 sourced edges with 100% provenance, implement a re-runnable refresh pipeline that re-applies the license gate and re-stamps as-of labels, and conduct a fresh stratified accuracy audit achieving >=98%.",
+  "acceptanceCriteria": [
+    ">=4 source collections are integrated, each with a license gate approved entry before extraction.",
+    ">=25,000 sourced edges are published with 100% provenance.",
+    "A re-runnable refresh pipeline re-applies the license gate and re-stamps source versions ('as-of' labels) for each run.",
+    "A fresh stratified accuracy audit of the scaled dataset achieves >=98%.",
+    "All CI gates (Biolink/SHACL + provenance + allow-list) remain green at scale.",
+    "Dataset is published with per-source version labels and a changelog."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/oncogene-kg-validate-001.json",
+    "tasks/oncogene-kg-export-001.json",
+    "tasks/oncogene-kg-license-002.json"
+  ],
+  "output": "Updated data/ directory with the scaled multi-source graph (>=25,000 edges) in all export formats, refresh pipeline code, and a fresh accuracy audit report.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}

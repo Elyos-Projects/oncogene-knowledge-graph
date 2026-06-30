@@ -1,0 +1,34 @@
+{
+  "id": "oncogene-kg-license-001",
+  "title": "Source allow-list schema + license-gate policy (cancer guardrails)",
+  "project": "oncogene-knowledge-graph",
+  "type": "design-spec",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["cancer-research", "bioinformatics", "open-data", "knowledge-graph", "licensing"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "Before any source is ingested into the oncogene knowledge graph, a formal allow-list schema and license-gate policy must exist so that contributors and CI can enforce redistribution compliance. COSMIC, OncoKB, and DrugBank-NC are non-redistributable and must be categorically rejected. CC-BY-SA and CC-BY sources must be segregated from the CC0 core. This policy is the hard gate for all subsequent data-extraction tasks.",
+  "objective": "Define the sources/allowlist.yml schema and the license-gate policy document covering: allowlist fields (source, custodian, version, URL, format, license, redistribution/derivatives terms, attribution obligations, status), categorical rejection rules for non-redistributable sources, and the per-release re-verification requirement.",
+  "acceptanceCriteria": [
+    "sources/allowlist.yml schema captures: source name, custodian, version, URL, format, license basis, redistribution + derivatives terms, attribution/share-alike obligation, and status (approved|rejected|pending).",
+    "Policy text states COSMIC, OncoKB, and DrugBank-NC and any non-redistributable, controlled-access, or identifiable source are categorically rejected.",
+    "CC-BY-SA and CC-BY sources are designated for segregated overlays with their own license manifest separate from the CC0 core.",
+    "Per-version re-verification requirement is documented (licenses can change between releases).",
+    "Policy is published as a human-readable document and machine-readable YAML schema."
+  ],
+  "resources": [
+    "PLAN.md",
+    "https://civicdb.org/",
+    "https://reactome.org/",
+    "https://platform.opentargets.org/",
+    "https://creativecommons.org/licenses/"
+  ],
+  "output": "docs/license-policy.md and sources/allowlist.schema.yml defining the license-gate schema and cancer-guardrail policy, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}

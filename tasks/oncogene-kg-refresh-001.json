@@ -1,0 +1,34 @@
+{
+  "id": "oncogene-kg-refresh-001",
+  "title": "Automated scheduled refresh + diff review + re-license-gate",
+  "project": "oncogene-knowledge-graph",
+  "type": "maintenance",
+  "lane": "donated",
+  "priority": "low",
+  "domain": ["cancer-research", "bioinformatics", "open-data", "knowledge-graph", "data-engineering"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "Knowledge graph data becomes stale as source databases update their records and occasionally change licenses. An automated refresh pipeline addresses the stale-evidence risk by re-running the ETL on updated source versions, re-applying the license gate, producing a diff for human review, and re-stamping as-of version labels. This is an unscheduled backlog item for after M4 is shipped.",
+  "objective": "Implement an automated scheduled refresh pipeline that fetches updated source versions, re-applies the license gate before extraction, runs the ETL, produces a human-reviewable diff of changed assertions, and re-stamps as-of labels. A human must approve the diff before new data is published.",
+  "acceptanceCriteria": [
+    "Pipeline runs on a configurable schedule and fetches the latest approved source versions.",
+    "License gate is re-applied at each refresh: if a source's terms have changed, the entry reverts to 'pending' and ingestion is blocked until re-approved.",
+    "A human-reviewable diff of added, removed, and changed assertions is generated for each refresh run.",
+    "As-of version labels are re-stamped on all assertions in the refreshed dataset.",
+    "Human approval is required before the refreshed data is published; no auto-publish without review.",
+    "Pipeline integrates with CI and passes all existing gates after refresh."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/oncogene-kg-data-scale-001.json",
+    "tasks/oncogene-kg-license-002.json",
+    "tasks/oncogene-kg-ci-001.json"
+  ],
+  "output": ".github/workflows/refresh.yml and scripts/refresh/ directory implementing the scheduled refresh pipeline with diff generation, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

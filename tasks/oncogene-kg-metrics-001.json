@@ -1,0 +1,32 @@
+{
+  "id": "oncogene-kg-metrics-001",
+  "title": "Reuse-metrics tracking (downloads/queries, no PII)",
+  "project": "oncogene-knowledge-graph",
+  "type": "maintenance",
+  "lane": "donated",
+  "priority": "low",
+  "domain": ["cancer-research", "bioinformatics", "open-data", "knowledge-graph"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "To track the real-world impact of the knowledge graph (one of the Elyos success measures), download and query counts must be tracked without collecting any personally identifiable information. This is an unscheduled backlog item that helps demonstrate steward impact and justify continued investment. The implementation must be privacy-preserving.",
+  "objective": "Design and implement a PII-free reuse-metrics tracking mechanism for the knowledge graph exports and explorer, and publish a metrics dashboard or periodic report showing download and query counts by data type and format.",
+  "acceptanceCriteria": [
+    "Metrics tracking is implemented for export file downloads and explorer page views (count only, no PII).",
+    "No IP addresses, user agents, or other personally identifiable information are stored.",
+    "Metrics are aggregated and published as a periodic report or a public dashboard.",
+    "The metrics design is documented with a privacy statement confirming no PII collection.",
+    "Metrics methodology is documented so numbers are reproducible and auditable."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/oncogene-kg-explorer-001.json",
+    "tasks/oncogene-kg-export-001.json"
+  ],
+  "output": "docs/metrics-methodology.md and a live or periodic metrics report (output/metrics-report.md or dashboard URL), committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}

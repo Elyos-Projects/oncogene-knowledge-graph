@@ -1,0 +1,34 @@
+{
+  "id": "oncogene-kg-qa-001",
+  "title": "Independent stratified accuracy + provenance audit of CIViC slice (>=98%)",
+  "project": "oncogene-knowledge-graph",
+  "type": "research",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["cancer-research", "bioinformatics", "open-data", "knowledge-graph", "quality-assurance"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "The project's definition of done requires an independent accuracy audit achieving >=98% verification rate. The auditor must be independent of the extractor to avoid self-grading bias. The audit covers a stratified sample of assertions from the CIViC data slice, checking that each assertion matches the cited CIViC source record and that no evidence re-grading occurred. Mis-citations block sign-off until corrected.",
+  "objective": "Conduct an independent stratified accuracy and provenance audit of the CIViC graph slice. Check a stratified sample (>=200 assertions or whole release, strata by edge type and evidence level) against cited CIViC records, confirm >=98% verification, and confirm no evidence re-grading occurred.",
+  "acceptanceCriteria": [
+    "A stratified sample of >=200 assertions (or the whole release if smaller) is audited, with strata by edge type and evidence level.",
+    ">=98% of sampled assertions verify against the cited CIViC source record.",
+    "Auditor confirms no evidence re-grading occurred (levels match CIViC source verbatim).",
+    "Auditor is independent of the CIViC ETL implementer (no self-grading).",
+    "Any mis-citations found are reported and block sign-off until the ETL is corrected.",
+    "Audit report published as docs/qa/civic-audit-report.md with methodology, sample design, findings, and sign-off."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/oncogene-kg-data-civic-001.json",
+    "https://civicdb.org/",
+    "https://biolink.github.io/biolink-model/"
+  ],
+  "output": "docs/qa/civic-audit-report.md with methodology, stratified sample design, per-stratum results, overall accuracy rate, and independent auditor sign-off.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}

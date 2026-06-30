@@ -1,0 +1,33 @@
+{
+  "id": "oncogene-kg-firewall-001",
+  "title": "'Research use / not medical advice' scope-firewall policy",
+  "project": "oncogene-knowledge-graph",
+  "type": "design-spec",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["cancer-research", "bioinformatics", "open-data", "knowledge-graph", "ethics"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "The knowledge graph is a research and education artifact derived from publicly available knowledgebases. It must never be construed as providing medical advice, and the project must clearly define and enforce what is in and out of scope. This policy is a guardrail that applies to the explorer UI, all exports, all downstream use guidance, and all contributor instructions.",
+  "objective": "Define and document the scope-firewall policy: what the graph is (research/education tool aggregating open knowledgebases), what it is not (medical device, clinical decision support, or source of medical advice), required disclaimers for all public-facing surfaces, and contributor obligations to maintain the firewall.",
+  "acceptanceCriteria": [
+    "Policy explicitly states the graph is a research and education artifact, never medical advice or clinical decision support.",
+    "Mandatory disclaimer text is specified for all public-facing surfaces (explorer UI, export README, API responses).",
+    "Contributor obligations to maintain the firewall are documented.",
+    "Patient-facing and clinical-decision-support use cases are explicitly listed as out of scope.",
+    "Policy covers handling of any content that could be misread as clinical guidance (e.g., evidence levels, drug-variant associations).",
+    "Published as a human-readable policy document referenced from the project README."
+  ],
+  "resources": [
+    "PLAN.md",
+    "README.md",
+    "https://civicdb.org/"
+  ],
+  "output": "docs/scope-firewall-policy.md defining the research-use firewall, mandatory disclaimer text, and out-of-scope use cases, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}

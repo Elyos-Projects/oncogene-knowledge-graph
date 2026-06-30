@@ -1,0 +1,33 @@
+{
+  "id": "oncogene-kg-partner-001",
+  "title": "Steward + CIViC-community outreach; reviewer recruitment",
+  "project": "oncogene-knowledge-graph",
+  "type": "research",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": ["cancer-research", "bioinformatics", "open-data", "knowledge-graph", "community"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "The project currently has no committed steward or named reviewers (License/Compliance and Scientific). The M0 exit is blocked until a License/Compliance reviewer is named. Outreach to the CIViC community and relevant academic/advocacy groups is needed to recruit stewards and domain reviewers. This is a human coordination task.",
+  "objective": "Conduct initial outreach to CIViC community members, cancer bioinformatics groups, and potential stewards. Recruit a named License/Compliance reviewer (hard M0 exit requirement) and identify candidate Scientific reviewers. Log outreach contacts and responses.",
+  "acceptanceCriteria": [
+    "Outreach to ≥3 candidate stewards or community groups is logged with contact, date, and response.",
+    "CIViC community outreach is documented.",
+    "A named License/Compliance reviewer is recruited or the blocker is escalated per PLAN.md fallback.",
+    "At least one candidate Scientific reviewer is identified.",
+    "Outreach log is committed as docs/partner-outreach-log.md."
+  ],
+  "resources": [
+    "PLAN.md",
+    "README.md",
+    "https://civicdb.org/",
+    "https://github.com/griffithlab/civic-v2"
+  ],
+  "output": "docs/partner-outreach-log.md recording outreach contacts, responses, and recruiter status for the License/Compliance and Scientific reviewer seats, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}

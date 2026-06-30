@@ -1,0 +1,36 @@
+{
+  "id": "oncogene-kg-data-civic-001",
+  "title": "Produce first CIViC-derived graph slice (gene-variant-drug-disease)",
+  "project": "oncogene-knowledge-graph",
+  "type": "data",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["cancer-research", "bioinformatics", "open-data", "knowledge-graph", "precision-oncology"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "dataset",
+  "tokenEstimate": "large",
+  "status": "open",
+  "context": "With the CIViC ETL pipeline in place (oncogene-kg-extract-civic-001), the first actual data slice must be produced and published. This slice covers gene-variant-drug-disease associations from CIViC, exported as KGX and JSON-LD, with 100% provenance and passing all CI gates. Source-conflicting statements must be retained with separate provenance, not flattened. This is the first tangible deliverable of the project.",
+  "objective": "Run the CIViC ETL pipeline to produce and publish the first graph data slice in KGX and JSON-LD formats, with 100% assertion provenance, passing all CI gates, and retaining source-conflicting statements with separate provenance records.",
+  "acceptanceCriteria": [
+    "First slice published as KGX (TSV+JSON) and JSON-LD.",
+    "100% of assertions carry resolvable provenance (source, record ID, license, version, PMID, method, commit).",
+    "Passes CI (Biolink/SHACL + provenance-completeness + allow-list linter) before review.",
+    "Source-conflicting statements are retained with separate provenance records, not flattened to a single truth.",
+    "Dataset is committed with a version label and checksum of the input CIViC release.",
+    "A brief data README describes the slice, entity counts, and how to load it."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/oncogene-kg-extract-civic-001.json",
+    "tasks/oncogene-kg-prov-001.json",
+    "tasks/oncogene-kg-ci-001.json",
+    "https://kgx.readthedocs.io/",
+    "https://civicdb.org/"
+  ],
+  "output": "data/civic/ directory containing the KGX and JSON-LD graph slice files with checksums and a data README, committed via PR with CI green.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}

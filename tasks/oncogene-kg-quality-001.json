@@ -1,0 +1,34 @@
+{
+  "id": "oncogene-kg-quality-001",
+  "title": "Automated anomaly/outlier flagging for reviewer",
+  "project": "oncogene-knowledge-graph",
+  "type": "code",
+  "lane": "donated",
+  "priority": "low",
+  "domain": ["cancer-research", "bioinformatics", "open-data", "knowledge-graph", "quality-assurance"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "As the knowledge graph grows, manual quality review becomes impractical. Automated anomaly and outlier detection can flag suspicious assertions (e.g., unusually high connectivity, evidence level inconsistencies, missing expected fields, statistical outliers in gene-drug associations) for human reviewer attention. This is an assistive QA tool; human confirmation is always required before any assertion is modified or removed.",
+  "objective": "Implement automated anomaly and outlier flagging that identifies suspicious graph patterns and generates a human-reviewable flag report. The tool must not modify or remove any assertions autonomously; it produces a report for reviewer action only.",
+  "acceptanceCriteria": [
+    "At least 3 anomaly/outlier detection heuristics are implemented (e.g., unusually high node connectivity, missing expected fields, evidence level inconsistency within a source).",
+    "Flagged assertions are reported with the specific anomaly type, the assertion ID, and a suggested reviewer action.",
+    "The tool produces a human-readable flag report; it does not modify or delete any assertions.",
+    "Tool integrates into CI and runs on graph data PRs, producing a flag report artifact.",
+    "False-positive rate is documented in the tool README based on a test run against known-good data.",
+    "A brief README explains each heuristic and its expected precision."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/oncogene-kg-validate-001.json",
+    "tasks/oncogene-kg-data-scale-001.json",
+    "https://biolink.github.io/biolink-model/"
+  ],
+  "output": "qa/anomaly-detection/ directory with anomaly-flagging scripts and a sample output flag report, committed via PR with CI green.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

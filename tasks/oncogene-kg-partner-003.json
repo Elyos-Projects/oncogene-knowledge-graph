@@ -1,0 +1,34 @@
+{
+  "id": "oncogene-kg-partner-003",
+  "title": "Secure steward adoption + >=1 documented downstream use",
+  "project": "oncogene-knowledge-graph",
+  "type": "research",
+  "lane": "donated",
+  "priority": "low",
+  "domain": ["cancer-research", "bioinformatics", "open-data", "knowledge-graph", "community"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "The project's definition of 'shipped' requires a named steward who has adopted, hosted, or cited the graph, and at least one documented concrete downstream use (a tool, paper, or integration). This converts the project from a good-deed artifact to a proven real-world resource. Builds on the candidate-steward engagement from oncogene-kg-partner-002.",
+  "objective": "Convert at least one candidate steward to a named adopter who commits to host, cite, or integrate the graph, and document at least one concrete downstream use (a tool, paper, or integration built on the graph).",
+  "acceptanceCriteria": [
+    "A named academic, advocacy, or community steward formally commits to adopt, host, or cite the graph.",
+    "The commitment is documented with organization name, named contact, form of adoption, and date.",
+    ">=1 concrete downstream use is documented: a specific tool, published paper, or integration that uses the graph data.",
+    "The downstream use documentation includes a URL or citation.",
+    "verifiedNeed can be updated to true upon completion of this task.",
+    "Adoption record committed as docs/steward-adoption.md."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/oncogene-kg-partner-002.json",
+    "tasks/oncogene-kg-explorer-001.json",
+    "tasks/oncogene-kg-export-001.json"
+  ],
+  "output": "docs/steward-adoption.md documenting the named steward commitment and >=1 concrete downstream use with URL or citation, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}

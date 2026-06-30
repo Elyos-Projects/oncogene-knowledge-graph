@@ -271,3 +271,73 @@ against `packages/schema/src/schemas.ts`:
   "outputLicense": "CC0-1.0"
 }
 ```
+
+---
+
+## Generated task index
+
+The following task JSON files have been generated in `tasks/` from the backlog above.
+Each file is validated against the Elyos task schema (`packages/schema/src/schemas.ts`).
+
+### Milestone M0 — Foundation, licensing spine & schema
+
+| Task ID | File |
+| --- | --- |
+| oncogene-kg-schema-001 | tasks/oncogene-kg-schema-001.json *(seed)* |
+| oncogene-kg-license-001 | tasks/oncogene-kg-license-001.json |
+| oncogene-kg-license-002 | tasks/oncogene-kg-license-002.json |
+| oncogene-kg-prov-001 | tasks/oncogene-kg-prov-001.json |
+| oncogene-kg-id-001 | tasks/oncogene-kg-id-001.json |
+| oncogene-kg-firewall-001 | tasks/oncogene-kg-firewall-001.json |
+| oncogene-kg-ci-001 | tasks/oncogene-kg-ci-001.json |
+| oncogene-kg-partner-001 | tasks/oncogene-kg-partner-001.json |
+
+### Milestone M1 — First sourced slice (CIViC, CC0, end-to-end)
+
+| Task ID | File |
+| --- | --- |
+| oncogene-kg-extract-civic-001 | tasks/oncogene-kg-extract-civic-001.json |
+| oncogene-kg-data-civic-001 | tasks/oncogene-kg-data-civic-001.json |
+| oncogene-kg-qa-001 | tasks/oncogene-kg-qa-001.json |
+| oncogene-kg-partner-002 | tasks/oncogene-kg-partner-002.json |
+
+### Milestone M2 — Multi-source integration & normalization
+
+| Task ID | File |
+| --- | --- |
+| oncogene-kg-id-002 | tasks/oncogene-kg-id-002.json |
+| oncogene-kg-extract-reactome-001 | tasks/oncogene-kg-extract-reactome-001.json |
+| oncogene-kg-extract-ot-001 | tasks/oncogene-kg-extract-ot-001.json |
+| oncogene-kg-data-clinvar-001 | tasks/oncogene-kg-data-clinvar-001.json |
+
+### Milestone M3 — Validation, explorer & exports
+
+| Task ID | File |
+| --- | --- |
+| oncogene-kg-validate-001 | tasks/oncogene-kg-validate-001.json |
+| oncogene-kg-export-001 | tasks/oncogene-kg-export-001.json |
+| oncogene-kg-explorer-001 | tasks/oncogene-kg-explorer-001.json |
+| oncogene-kg-docs-001 | tasks/oncogene-kg-docs-001.json |
+
+### Milestone M4 — Scale & partner adoption (shipped)
+
+| Task ID | File |
+| --- | --- |
+| oncogene-kg-data-scale-001 | tasks/oncogene-kg-data-scale-001.json |
+| oncogene-kg-partner-003 | tasks/oncogene-kg-partner-003.json |
+| oncogene-kg-license-003 | tasks/oncogene-kg-license-003.json |
+| oncogene-kg-sustain-001 | tasks/oncogene-kg-sustain-001.json |
+
+### Backlog / future (unscheduled)
+
+| Task ID | File |
+| --- | --- |
+| oncogene-kg-overlay-mondo-001 | tasks/oncogene-kg-overlay-mondo-001.json |
+| oncogene-kg-overlay-chembl-001 | tasks/oncogene-kg-overlay-chembl-001.json |
+| oncogene-kg-vicc-001 | tasks/oncogene-kg-vicc-001.json |
+| oncogene-kg-sparql-001 | tasks/oncogene-kg-sparql-001.json |
+| oncogene-kg-refresh-001 | tasks/oncogene-kg-refresh-001.json |
+| oncogene-kg-metrics-001 | tasks/oncogene-kg-metrics-001.json |
+| oncogene-kg-quality-001 | tasks/oncogene-kg-quality-001.json |
+
+**Total: 31 task files (1 seed + 30 generated)**
